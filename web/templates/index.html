@@ -191,7 +191,13 @@
                 <img class="img-responsive" src="{{ c.get_imagen }}" alt="">
               </div>
               <div class="bio">
-                <h4>{{ c.nombre }} {{ c.apellidos }}</h4>
+                <h4>
+                	{% if c.podemos %}
+                	<a href="{{ c.podemos }}" title="Perfil Podemos" target="blank_">{{ c.nombre }} {{ c.apellidos }}</a>
+                	{% else %}
+                	{{ c.nombre }} {{ c.apellidos }}
+                	{% endif %}
+                </h4>
                 <h5>{{ c.descripcion_corta}}</h5>
                 <div class="border"></div>
                 <p>{{ c.motivacion }}</p>
