@@ -1,0 +1,399 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ahora Podemos Murcia. Un equipo para todxs. Candidatura plural, participativa y abierta para el Consejo Ciudadano de Podemos en el Municipio de Murcia.">
+    <meta name="author" content="Ahora Podemos Murcia">
+    <link rel="shortcut icon" href="{% static "assets/ico/favicon.ico" %}">
+    <title>Ahora Podemos Murcia. Un equipo para todxs.</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600">
+    <link rel="stylesheet" href="{% static "assets/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/style.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/animate.min.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/font-awesome.min.css" %}">
+    <!--[if lt IE 9]>
+    <script src="{% static "assets/js/html5shiv.js" %}"></script>
+    <script src="{% static "assets/js/respond.min.js" %}"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <link rel="image_src" href="{% static "assets/img/cover/home-link.jpg" %}">
+    <div class="loader">
+      <div class="fading-line"></div>
+    </div>
+    <section id="home" class="page">
+      <div class="container">
+        <div class="content cover text-center">
+          <div class="row">
+            <div class="col-lg-12">
+              <h1 class="animated hiding" data-animation="fadeInDown" data-delay="300"><span class="ahora">Ahora</span> <span class="podemos">Podemos</span></h1>
+              <h1 class="animated hiding" data-animation="fadeInDown" data-delay="300"><span class="murcia">Regi&oacute;n de Murcia</span></h1>
+              <a class="btn btn-apm nav-external animated hiding" data-animation="fadeIn" data-delay="900" href="#metodo">Empod&eacute;rate</a>
+              <h3 class="animated hiding" data-animation="fadeIn" data-delay="600">Un equipo para todxs.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="navbar-top">
+      <nav class="navbar navbar-default navbar-static" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand nav-external" href="#home">Ahora Podemos Región de Murcia</a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active">
+                <a href="#home">Inicio</a>
+              </li>
+              <li>
+                <a href="#metodo">M&eacute;todo</a>
+              </li>
+              <li>
+                <a href="#podemos">Podemos</a>
+              </li>
+              <li>
+                <a href="#municipio">Municipio</a>
+              </li>
+              <li>
+                <a href="#citas">Citas</a>
+              </li>
+              <li>
+                <a href="#about">Equipo</a>
+              </li>
+              <li>
+                <a href="#work">Documentos</a>
+              </li>
+              <li>
+                <a href="#prensa">Prensa</a>
+              </li>
+              <li>
+                <a href="#contact">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <section id="metodo" class="page">
+      <div class="container">
+        <div class="content text-center">
+          <div class="heading">
+            <h2>Ahora Podemos Región de Murcia. Nuestro m&eacute;todo</h2>
+            <div class="border"></div>
+            <p>Candidatura plural, con sensibilidad territorial, participativa y abierta para el Consejo Ciudadano de Podemos en la Región de Murcia.</p>
+          </div>
+          <div class="row">
+          	{% for ideafuerza in ideasfuerza_m %}
+            <div class="col-lg-{{ m_columns }} service animated hiding" data-animation="fadeInUp" data-delay="300">
+              <i class="fa fa-{{ ideafuerza.icono }} fa-5x"></i>
+              <h3>{{ ideafuerza.titulo | escape }}</h3>
+              <p>{{ ideafuerza.descripcion | escape }}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="podemos" class="page">
+      <div class="container">
+        <div class="content text-center">
+          <div class="heading">
+            <h2>Consejo Ciudadano de Podemos Región de Murcia. Organizaci&oacute;n</h2>
+            <div class="border"></div>
+            <p>Fruto de la colaboración y la cooperación también a nivel estatal, esta es una propuesta organizativa con el foco puesto en la participación y en la toma de decisiones en los círculos territoriales y sectoriales, además de aportar herramientas enfocadas a la cooperación con la ciudadanía y los movimientos sociales. También se profundiza en espacios de coordinación comarcales y regional para mejorar la comunicación entre las diferentes parte de Podemos en la Región de Murcia.</p>
+            <p>Puedes consultar nuestro documento organizativo <strong><a href="/media/document_documents/Documento-organizativo-Ahora-Podemos.pdf" target="blank_">aqu&iacute;</a></strong>.</p>
+          </div>
+          <div class="row">
+          	{% for ideafuerza in ideasfuerza_p %}
+            <div class="col-lg-{{ p_columns }} service animated hiding" data-animation="fadeInUp" data-delay="300">
+              <i class="fa fa-{{ ideafuerza.icono }} fa-5x"></i>
+              <h3>{{ ideafuerza.titulo | escape }}</h3>
+              <p>{{ ideafuerza.descripcion | escape }}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="municipio" class="page">
+      <div class="container">
+        <div class="content text-center">
+          <div class="heading">
+            <h2>Líneas pol&iacute;ticas para la Región de Murcia</h2>
+            <div class="border"></div>
+            <p><i>«Podemos ha nacido con un horizonte muy concreto: desalojar del poder a las clases dominantes y dotar a las clases populares de mecanismos que faciliten su autogobierno. Este objetivo sólo podría empezar a realizarse con una victoria electoral, y Podemos necesita afrontar en efecto las elecciones desde una lógica ofensiva y ganadora. Un gobierno de cambio y ruptura se encontrará no obstante con serias dificultades para hacer valer su programa. (...) ¿Cómo gobernar una comunidad autónoma endeudada por políticas neoliberales y dinámicas larvadas de corrupción? ¿Cómo resistir una fuga de capitales, reacción más que posible ante la implantación de una fiscalidad fuertemente progresiva? Se hace necesario construir un poder popular preparado para resistir la presión que se desatará desde las élites tras el triunfo electoral.»</i></p>
+            <p>Puedes consultar nuestro documento pol&iacute;tico <strong><a href="/media/document_documents/Documento-Politico-Ahora-Podemos-Murcia.pdf" target="blank_">aqu&iacute;</a></strong>.</p>
+          </div>
+          <div class="row">
+          	{% for ideafuerza in ideasfuerza_a %}
+            <div class="col-lg-{{ a_columns }} service animated hiding" data-animation="fadeInUp" data-delay="300">
+              <i class="fa fa-{{ ideafuerza.icono }} fa-5x"></i>
+              <h3>{{ ideafuerza.titulo | escape }}</h3>
+              <p>{{ ideafuerza.descripcion | escape }}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="citas" class="page">
+      <div class="container">
+        <div class="content text-center">
+          <div class="row">
+            <div class="col-lg-12 animated hiding" data-animation="fadeInDown">
+              <div id="testimonials" class="carousel slide">
+                <ol class="carousel-indicators">
+                  {% for cita in citas %}
+                  <li data-target="#testimonials" data-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}"></li>
+                  {% endfor %}
+                </ol>
+                <div class="carousel-inner">
+                  {% for cita in citas %}
+                  <div class="item{% if forloop.first %} active{% endif %}">
+                    <p class="quote">{{ cita.cita | escape }}</p>
+                    <p class="client">{{ cita.candidato | escape }} / {{ cita.candidato.descripcion_corta | escape }}</p>
+                  </div>
+                  {% endfor %}
+                </div>
+                <a class="left carousel-control" data-slide="prev" href="#testimonials">&lsaquo;</a>
+                <a class="right carousel-control" data-slide="next" href="#testimonials">&rsaquo;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="page">
+      <div class="container">
+        <div class="content text-center">
+          <div class="heading">
+            <h2>Un equipo para todxs.</h2>
+            <div class="border"></div>
+            <p>Un equipo plural, con sensibilidad territorial, participativo y abierto; fruto de unas éxitosas primarias no oficiales donde participaron casi 200 personas.</p>
+          </div>
+          {% for c in candidatos %}
+          {% if forloop.counter0|divisibleby:4 %}
+          <div class="row">
+          {% endif %}
+            <div class="col-md-3 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInLeft" data-delay="600">
+              <div class="profile-photo">
+                <img class="img-responsive" src="{{ c.get_imagen }}" alt="">
+              </div>
+              <div class="bio">
+                <h4>{{ c.nombre }} {{ c.apellidos }}</h4>
+                <h5>{{ c.descripcion_corta}}</h5>
+                <div class="border"></div>
+                <p>{{ c.motivacion }}</p>
+                {% if c.blog or c.facebook or c.twitter or c.youtube %}
+                <ul class="list-inline">
+                  {% if c.blog %}
+                  <li>
+                    <a href="{{ c.blog }}" title="Blog" target="blank_">
+                      <i class="fa fa-pencil"></i>
+                    </a>
+                  </li>
+                  {% endif %}
+                  {% if c.facebook %}
+                  <li>
+                    <a href="{{ c.facebook }}" title="Facebook" target="blank_">
+                      <i class="fa fa-facebook"></i>
+                    </a>
+                  </li>
+                  {% endif %}
+                  {% if c.twitter %}
+                  <li>
+                    <a href="{{ c.twitter }}" title="Twitter" target="blank_">
+                      <i class="fa fa-twitter"></i>
+                    </a>
+                  </li>
+                  {% endif %}
+                  {% if c.youtube %}
+                  <li>
+                    <a href="{{ c.youtube }}" title="Vídeo" target="blank_">
+                      <i class="fa fa-youtube-play"></i>
+                    </a>
+                  </li>
+                  {% endif %}
+                </ul>
+                {% endif %}
+              </div>
+            </div>
+          {% if forloop.counter|divisibleby:4 or foorloop.last %}
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="twitter text-center">
+        <div class="animated hiding" data-animation="fadeIn">
+          <i class="fa fa-facebook fa-3x"></i>
+        </div>
+        <div class="fb-like-box" data-href="https://www.facebook.com/ahorapodemosrm" data-width="500" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="true" data-show-border="false"></div>
+      </div>
+    </section>
+    <section id="work" class="page">
+      <div class="container">
+        <div class="content text-center">
+          <div class="heading">
+            <h2>Documentos.</h2>
+            <div class="border"></div>
+            <p>Nuestros documentos organizativo y pol&iacute;tico, resúmenes, octavillas.</p>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div id="portfolio">
+                <ul class="filters list-inline">
+                  <li>
+                    <a class="active" data-filter="*" href="#">Todos</a>
+                  </li>
+                  <li>
+                    <a data-filter=".d" href="#">Documentos</a>
+                  </li>
+                  <li>
+                    <a data-filter=".o" href="#">Octavillas</a>
+                  </li>
+                  <li>
+                    <a data-filter=".s" href="#">Otros</a>
+                  </li>
+                </ul>
+                <ul class="items list-unstyled clearfix animated hiding" data-animation="fadeInRight">
+                  {% for d in documentos %}
+                  <li class="item {{ d.categoria }}">
+                    <a href="{{ d.get_documento }}" target="blank_">
+                      <img src="{{ d.imagen.url }}" alt="">
+                      <div class="overlay">
+                        <span>{{ d.nombre }}</span>
+                      </div>
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="prensa" class="page">
+      <div class="container">
+        <div class="content text-center">
+          <div class="heading">
+            <h2>Prensa.</h2>
+            <div class="border"></div>
+            <p>&nbsp;</p>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 animated hiding" data-animation="fadeInDown">
+              <div id="news" class="carousel slide">
+                <ol class="carousel-indicators">
+                  {% for n in noticias %}
+                  {% if forloop.counter0|divisibleby:2 %}
+                  <li data-target="#news" data-slide-to="{% widthratio forloop.counter0 2 1 %}" class="{% if forloop.first %}active{% endif %}"></li>
+                  {% endif %}
+                  {% endfor %}
+                </ol>
+                <div class="carousel-inner">
+                  {% for n in noticias %}
+                  {% if forloop.counter0|divisibleby:2 %}
+                  <div class="row item{% if forloop.first %} active{% endif %}">
+                  {% endif %}
+                    <div class="col-lg-6">
+	                  <p class="quote"><a href="{{ n.enlace }}" target="blank_">{{ n.titular }}</a></p>
+	                  <p class="client">{{ n.resumen }}</p>
+	                  <p class="client"><i>{{ n.diario }} / {{ n.fecha }}</i></p>
+	                </div>
+	              {% if forloop.counter|divisibleby:2 or forloop.last %}
+	              </div>
+	              {% endif %}
+	              {% endfor %}
+                </div>
+                <a class="left carousel-control" data-slide="prev" href="#news">&lsaquo;</a>
+                <a class="right carousel-control" data-slide="next" href="#news">&rsaquo;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="page">
+      <div class="container">
+        <div class="content cover text-center">
+          <div class="heading">
+            <h2>Contacta con nosotrxs.</h2>
+            <div class="border"></div>
+            <p>Puedes ponerte en contacto con nosotrxs a trav&eacute;s de:</p>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 animated hiding" data-animation="fadeInLeft" data-delay="600">
+              <i class="fa fa-envelope fa-3x"></i>
+              <a href="mailto:info@ahorapodemosmurcia.org">info@ahorapodemosmurcia.org</a>
+            </div>
+            <div class="col-lg-3 animated hiding" data-animation="fadeInDown" data-delay="300">
+              <i class="fa fa-facebook fa-3x"></i>
+              <a href="https://www.facebook.com/ahorapodemosrm">Facebook</a>
+            </div>
+            <div class="col-lg-3 animated hiding" data-animation="fadeInDown" data-delay="300">
+              <i class="fa fa-twitter fa-3x"></i>
+              <a href="https://twitter.com/AhoraPodemosMu">Twitter</a>
+            </div>
+            <div class="col-lg-3 animated hiding" data-animation="fadeInLeft" data-delay="600">
+              <i class="fa fa-youtube fa-3x"></i>
+              <a href="https://www.youtube.com/channel/UChTmMjCMKEQtPV3oVRWdYxg">Canal de Youtube</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 animated hiding" data-animation="fadeInUp">
+            <p class="copyright"> 
+              Creado por <a href="http://www.ahorapodemosregiondemurcia.info">Ahora Podemos Regi&oacute;n de Murcia</a> &middot; 
+              Licenciado bajo la <a href="http://www.apache.org/licenses/LICENSE-2.0">GNU General Public License v3.0</a> &middot; 
+              Basado en <a href="http://www.github.com/halibegic/Merlin">Merlin</a>  &middot; 
+              Iconos por <a href="http://fontawesome.io/">Font Awesome</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="{% static "assets/js/jquery.min.js" %}"></script>
+    <script src="{% static "assets/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "assets/js/isotope.pkgd.min.js" %}"></script>
+    <script src="{% static "assets/js/imagesloaded.min.js" %}"></script>
+    <script src="{% static "assets/js/jquery.scrollTo.min.js" %}"></script>
+    <script src="{% static "assets/js/jquery.nav.min.js" %}"></script>
+    <script src="{% static "assets/js/jquery.appear.min.js" %}"></script>
+    <script src="{% static "assets/js/twitterFetcher.min.js" %}"></script>
+    <script src="{% static "assets/js/script.js" %}"></script>
+    <!-- Google Analytics: change UA-25089888-9 to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-57256183-2');ga('send','pageview');
+    </script>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&appId=275052237501&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+  </body>
+</html>
